@@ -1,28 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-@NgModule({
-    declarations:[
+@NgModule({ declarations: [
         AppComponent
     ],
-    imports:[
-        BrowserModule,
+    bootstrap: [AppComponent], imports: [BrowserModule,
         RouterModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        
-    ],
-    providers:[
-    
-    provideAnimationsAsync()
-  ],
-    bootstrap:[AppComponent]
-    
-})
+        BrowserAnimationsModule], providers: [
+        provideAnimationsAsync(),
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
 
