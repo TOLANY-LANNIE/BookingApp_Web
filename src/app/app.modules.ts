@@ -6,8 +6,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-@NgModule({ declarations: [
-        AppComponent
+import { LoginComponent } from './features/auth/login/login.component';
+import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
+import { DashboardComponent } from './features/customer/dashboard/dashboard.component';
+
+
+@NgModule({ 
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        SignUpComponent,
+        DashboardComponent
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         RouterModule,
