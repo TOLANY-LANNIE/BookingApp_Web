@@ -7,6 +7,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalInterceptor } from './interceptors/http.interceptor';
 import { AppRoutingModule } from './app.routes';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 
 import { LoginComponent } from './features/auth/login/login.component';
 import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
@@ -15,6 +17,7 @@ import { ConflictListComponent } from './features/mananger/conflict-list/conflic
 import { LoaderComponent } from './features/loader/loader.component';
 import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { OrderListComponent } from './features/operator/order-list/order-list.component';
+import { AuthComponent } from './layout/auth/auth.component';
 
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -25,6 +28,9 @@ import { MatListModule} from '@angular/material/list';
 import { MatButtonModule} from '@angular/material/button';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatFormFieldModule} from '@angular/material/form-field'; 
+import { MatInputModule } from '@angular/material/input';
+
 
 
 import { AvatarModule } from 'primeng/avatar';
@@ -35,6 +41,7 @@ import { environment } from '../environment/environment.dev';
 @NgModule({ 
     declarations: [
         AppComponent,
+        AuthComponent,
         LoginComponent,
         SignUpComponent,
         DashboardComponent,
@@ -50,6 +57,8 @@ import { environment } from '../environment/environment.dev';
         RouterModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule,
 
         MatProgressSpinnerModule,
         MatToolbarModule,
@@ -60,6 +69,8 @@ import { environment } from '../environment/environment.dev';
         MatMenuModule,
         HttpClientModule,
         MatTooltipModule,
+        MatFormFieldModule,
+        MatInputModule,
 
         AvatarModule,
         AvatarGroupModule,
