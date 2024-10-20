@@ -73,13 +73,13 @@ export class SideMenuComponent {
       icon:'list_alt',
       label:'Conflicts List',
       route:'conflict-list',
-      role:'ConflictManager'
+      role:'Conflict  Manager'
     },
     {
       icon:'exit_to_app',
       label:'Logout',
       route:'auth/login',
-      role:''
+      role:'Test'
     },
   
   ]);

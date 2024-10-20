@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password).subscribe(
       (response: LoginResponse) => {
         // Handle successful login, e.g., store token and user info
-        localStorage.setItem('userToken', response.token!); // Adjust as necessary
+        //localStorage.setItem('userToken', response.token!); // Adjust as necessary
         this.router.navigate(['/dashboard']); // Navigate to dashboard or another route
       },
       (error) => {

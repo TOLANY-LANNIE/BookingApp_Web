@@ -18,6 +18,8 @@ import { LoaderComponent } from './features/loader/loader.component';
 import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { OrderListComponent } from './features/operator/order-list/order-list.component';
 import { AuthComponent } from './layout/auth/auth.component';
+import { UnauthorizedComponent } from './features/unauthorized/unauthorized.component';
+import {}
 
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -49,6 +51,7 @@ import { environment } from '../environment/environment';
         LoaderComponent,   
         SideMenuComponent,
         OrderListComponent,
+        UnauthorizedComponent
         
     ],
     bootstrap: [AppComponent],

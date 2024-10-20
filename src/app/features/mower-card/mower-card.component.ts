@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit, ElementRef, ViewChild, AfterViewChecked } from '@angular/core';
+import { UnsplashService } from '../../services/unsplash/unsplash.service';
 
 @Component({
   selector: 'app-mower-card',
-  standalone: true,
-  imports: [],
   templateUrl: './mower-card.component.html',
   styleUrl: './mower-card.component.scss'
 })
