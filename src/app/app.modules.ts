@@ -37,7 +37,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { TooltipModule } from 'primeng/tooltip';
 
-import { environment } from '../environment/environment.dev';
+import { environment } from '../environment/environment';
 @NgModule({ 
     declarations: [
         AppComponent,
