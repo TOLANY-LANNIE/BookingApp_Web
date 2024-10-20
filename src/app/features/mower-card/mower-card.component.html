@@ -1,42 +1,18 @@
 <mat-card class="card" @fadeInOut>
     <div class="image-container">
-      <img mat-card-image [src]="card?.BannerUrl || photo?.urls?.small" alt="Machine Image">
-      <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="viewDetails(card)" pTooltip="Event Details" tooltipPosition="bottom">
-          <mat-icon color="primary">info_outline</mat-icon>
-          <span>View Details</span>
-        </button>
-        <button mat-menu-item (click)="navigateToAttendees(card)" pTooltip="Guests List" tooltipPosition="bottom">
-          <mat-icon color="primary">people_outline</mat-icon>
-          <span>View Guests</span>
-        </button>
-      </mat-menu>
+      <img mat-card-image [src]="photo?.urls?.small" alt="Mower Image">
     </div>
-    
     <mat-card-content>
-      <div class="title-container" pTooltip="{{ card.Title }}" tooltipPosition="bottom">
-        <h3><strong>{{ card.MachineName }}</strong></h3> <!-- Show Machine Name -->
-      </div>    
-      <div class="location-container">
-        <mat-icon color="primary">access_time</mat-icon>
-        {{ formatDate(card.StartDate) }} - {{ formatDate(card.EndDate) }}
+      <div class="title-container" pTooltip="{{ mower.name }}" tooltipPosition="bottom">
+        <h3><strong>{{ mower.name }}</strong></h3>
       </div>
-      <div class="location-container">
-        <mat-icon color="primary">people_outline</mat-icon>
-        {{ card.Capacity }} Expected Guests
-      </div> 
-      <div class="location-container">
-        <mat-icon color="primary">check_circle_outline</mat-icon>
-        {{ attendeeCount }} Guest(s) confirmed
-      </div>      
     </mat-card-content>
     
+    <!-- Add the booking button here -->
     <mat-card-footer>
-      <button mat-raised-button color="primary" (click)="bookMachine(card)">Book Machine</button> <!-- Booking Button -->
-      <mat-progress-bar mode="determinate" [value]="getProgressPercentage(attendeeCount, card.Capacity)"></mat-progress-bar>
+      <button mat-raised-button color="primary" (click)="bookMower(mower)">
+        Book Now
+      </button>
     </mat-card-footer>
   </mat-card>
   

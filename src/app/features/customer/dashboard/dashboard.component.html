@@ -1,14 +1,27 @@
+<!-- src/app/components/dashboard/dashboard.component.html -->
 <div class="content" fxLayout="column" fxLayoutAlign="start stretch">
-    <div fxFlex="1 1 auto">
-  
-      <!--Header and Button Container-->
-      <div class="header-button-container">
-        <!--Page Title-->
-        <h1 fxFlex="100" fxFlex.gt-sm="auto">Book A Machine</h1>
-
-      </div>
-
-      <br>
-  
+  <div fxFlex="1 1 auto">
+    <!-- Header and Button Container -->
+    <div class="header-button-container">
+      <h1 fxFlex="100" fxFlex.gt-sm="auto">Book A Machine</h1>
     </div>
+    <br>
+    
+    <!-- Mower Card Grid -->
+    <div *ngIf="mowerList.length > 0; else noMowers">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="50%" *ngFor="let mower of mowerList">
+          <app-mower-card [mower]="mower"></app-mower-card> <!-- Pass mower data to the card component -->
+        </div>
+      </div>
+    </div>
+
+    <!-- No Mowers Found Message -->
+    <ng-template #noMowers>
+      <div class="no-mowers-message" fxLayout="column" fxLayoutAlign="center center">
+        <h2>No mowers found</h2>
+        <p>There are currently no mowers available for booking.</p>
+      </div>
+    </ng-template>
   </div>
+</div>

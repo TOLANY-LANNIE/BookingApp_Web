@@ -1,1 +1,81 @@
-<p>order-list works!</p>
+<div class="content" fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxFlex="1 1 auto">
+
+      <!--Header and Button Container-->
+      <div class="header-button-container">
+        <!--Page Title-->
+        <h1>
+         Bookings List
+        </h1>
+      </div>
+      <br>
+      <mat-card class="mat-elevation-z0">
+        <mat-table [dataSource]="dataSource" matSort>
+  
+            <!-- Customer Name Column -->
+            <ng-container matColumnDef="customerName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <p-avatar 
+                  [label]="getInitials(element.customerName)"
+                  styleClass="mr-2" 
+                  [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }" />
+                {{ element.customerName }}
+              </mat-cell>
+            </ng-container>
+            
+            <!-- Machine Name Column -->
+            <ng-container matColumnDef="machineName">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Machine Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.machineName }} </mat-cell>
+            </ng-container>
+            
+            <!-- Booking Date Column -->
+            <ng-container matColumnDef="bookingDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Booking Date </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.bookingDate | date:'shortDate' }} </mat-cell>
+            </ng-container>
+            
+            <!-- Status Column -->
+            <ng-container matColumnDef="status">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.status }} </mat-cell>
+            </ng-container>
+            
+            <!-- Operator Column -->
+            <ng-container matColumnDef="operator">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Operator </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{ element.operator }} </mat-cell>
+            </ng-container>
+            
+            <!-- More Options Column -->
+            <ng-container matColumnDef="moreOptions">
+              <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item title="Details">
+                    <mat-icon color="primary">info_outline</mat-icon>
+                    <span>Details</span>
+                  </button>
+                  <button mat-menu-item title="Delete">
+                    <mat-icon color="warn">delete_outline</mat-icon>
+                    <span>Delete</span>
+                  </button>
+                </mat-menu>
+              </mat-cell> 
+            </ng-container>
+          
+            <!-- No Data Row -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="6">No data</td>
+            </tr>  
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let element; columns: displayedColumns;"></mat-row>
+          </mat-table>               
+      </mat-card>
+    </div>
+  </div>

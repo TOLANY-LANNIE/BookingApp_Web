@@ -9,6 +9,7 @@ import { GlobalInterceptor } from './interceptors/http.interceptor';
 import { AppRoutingModule } from './app.routes';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule} from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LoginComponent } from './features/auth/login/login.component';
 import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
@@ -19,7 +20,8 @@ import { SideMenuComponent } from './utils/side-menu/side-menu.component';
 import { OrderListComponent } from './features/operator/order-list/order-list.component';
 import { AuthComponent } from './layout/auth/auth.component';
 import { UnauthorizedComponent } from './features/unauthorized/unauthorized.component';
-import {}
+import { MowerCardComponent } from './features/mower-card/mower-card.component';
+import { BookingModalComponent } from './features/customer/booking-modal/booking-modal.component';
 
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -32,6 +34,9 @@ import { MatMenuModule} from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field'; 
 import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card'; 
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 
@@ -51,7 +56,9 @@ import { environment } from '../environment/environment';
         LoaderComponent,   
         SideMenuComponent,
         OrderListComponent,
-        UnauthorizedComponent
+        UnauthorizedComponent,
+        MowerCardComponent,
+        BookingModalComponent
         
     ],
     bootstrap: [AppComponent],
@@ -62,6 +69,7 @@ import { environment } from '../environment/environment';
         BrowserAnimationsModule,
         ReactiveFormsModule,
         FormsModule,
+        FlexLayoutModule,
 
         MatProgressSpinnerModule,
         MatToolbarModule,
@@ -74,6 +82,9 @@ import { environment } from '../environment/environment';
         MatTooltipModule,
         MatFormFieldModule,
         MatInputModule,
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
 
         AvatarModule,
         AvatarGroupModule,
